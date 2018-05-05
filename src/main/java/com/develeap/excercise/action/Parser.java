@@ -75,8 +75,8 @@ public class Parser {
                 stringBuffer.append("\n");
             }
             fileReader.close();
-            System.out.println("Contents of file:");
-            System.out.println(stringBuffer.toString());
+            /////System.out.println("Contents of file:");
+            /////System.out.println(stringBuffer.toString());
         } catch (IOException e) {
             e.printStackTrace();
         } catch (Exception e) {
