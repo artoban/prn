@@ -26,7 +26,7 @@ public class Analizer {
 
         System.out.println("The most productive authors are:");
         Iterator<Map.Entry<String, Integer>> iterator = resultMap.entrySet().iterator();
-        int reqQuantity = 3;
+        int reqQuantity = 2;
         int prevAuthorQuantity = -1;
         while (iterator.hasNext() && reqQuantity > 0) {
             Map.Entry<String, Integer> entry = iterator.next();
@@ -40,15 +40,14 @@ public class Analizer {
                 strTemp[1] = "";
             }
 
-            System.out.println(" - " + strTemp[1] + " " + strTemp[0] + " (" + entry.getValue() + " titles)");
             int curtAuthorQuantity = entry.getValue();
+            if(prevAuthorQuantity == -1 || curtAuthorQuantity < prevAuthorQuantity ) {
+                reqQuantity--;
+            }
 
-            if(prevAuthorQuantity != -1 && curtAuthorQuantity < prevAuthorQuantity ) {
-                reqQuantity--;
-            }
-            else {
-                reqQuantity--;
-            }
+            System.out.println(" - " + strTemp[1] + " " + strTemp[0] + " (" + entry.getValue() + " titles)");
+
+
             prevAuthorQuantity = entry.getValue();
         }
 
