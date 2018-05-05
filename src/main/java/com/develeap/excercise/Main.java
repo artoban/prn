@@ -11,18 +11,15 @@ public class Main {
       new Main().go(args[0]);
     }
     catch(Exception ex){
-      System.out.println("The name of the rpn file is not supplied");
+      System.out.println("The name of the prn file is not supplied");
     }
   }
 
   private void go(String fname) throws Exception {
+   System.out.println(fname);
 
     File f = new File(fname);
     System.out.println(f + (f.exists()? " is found " : " is missing "));
-
-    if(!f.exists()) {
-      return;
-    }
 
     Parser.ReadFileLineByLine(fname);
 
