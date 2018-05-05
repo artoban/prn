@@ -17,6 +17,9 @@ public class Analizer {
         autors2Books.createStorage(dataBookMap);
         Map<String, Integer> unsortedStorage = autors2Books.getStorage();
 
+        System.out.println("\n");
+        System.out.println("***********************************************************");
+
         System.out.println("There are " + dataBookMap.size() + " books and " + unsortedStorage.size() + " authors in this file.");
 
         Map<String, Integer> resultMap = Helper.SortMapByValues(unsortedStorage);
@@ -27,9 +30,19 @@ public class Analizer {
         while (iterator.hasNext() && reqQuantity > 0) {
             Map.Entry<String, Integer> entry = iterator.next();
             StringBuffer temp = new StringBuffer(entry.getKey().replace(",", " "));
+
             String[] strTemp = temp.toString().split(" ");
+            if(strTemp.length == 1) {
+                String[] temp2 = strTemp;
+                strTemp = new String[2];
+                strTemp[0] = temp2[0];
+                strTemp[1] = "";
+            }
+
             System.out.println(" - " + strTemp[1] + " " + strTemp[0] + " (" + entry.getValue() + " titles)");
             reqQuantity--;
         }
+
+        System.out.println("***********************************************************");
     }
 }

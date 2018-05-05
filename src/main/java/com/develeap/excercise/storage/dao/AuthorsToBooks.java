@@ -25,8 +25,16 @@ public class AuthorsToBooks {
             Book book = entry.getValue();
 
             String[] parts = book.getAuthorsBuffer().split(",");
+            if(parts.length == 1) {
+                String[] temp = parts;
+                parts = new String[2];
+                parts[0] = temp[0];
+                parts[1] = "";
+            }
+
             String[] lasts = parts[0].split("/");
             String[] firsts = parts[1].split("/");
+
 
             for(int i=0; i<lasts.length; i++) {
                 StringBuffer authorBuffer = new StringBuffer(lasts[i] + "," + firsts[i]);

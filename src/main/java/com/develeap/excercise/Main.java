@@ -11,19 +11,25 @@ public class Main {
       new Main().go(args[0]);
     }
     catch(Exception ex){
-      System.out.println("The name of the prn file is not supplied");
+      System.out.println(ex.getMessage());
     }
   }
 
-  private void go(String fname) throws Exception {
+  private void go(String fname) throws Exception  {
    System.out.println(fname);
 
     File f = new File(fname);
     System.out.println(f + (f.exists()? " is found " : " is missing "));
 
+    if(!f.exists()) {
+        Exception ex = new Exception("The name of the prn file is not supplied");
+        throw ex;
+    }
+
     Parser.ReadFileLineByLine(fname);
 
     Analizer.MakeReport();
+
 
 
 //    System.out.println("The most productive authors are:");

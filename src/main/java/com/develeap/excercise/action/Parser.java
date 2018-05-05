@@ -71,8 +71,8 @@ public class Parser {
 
                     flag = true;
                 }
-                stringBuffer.append(line);
-                stringBuffer.append("\n");
+              /////  stringBuffer.append(line);
+              /////  stringBuffer.append("\n");
             }
             fileReader.close();
             /////System.out.println("Contents of file:");
