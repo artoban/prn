@@ -28,7 +28,7 @@ public class Analizer {
             Map.Entry<String, Integer> entry = iterator.next();
             StringBuffer temp = new StringBuffer(entry.getKey().replace(",", " "));
             String[] strTemp = temp.toString().split(" ");
-            System.out.println(strTemp[1] + " " + strTemp[0] + " - " + entry.getValue() + " titles");
+            System.out.println(" - " + strTemp[1] + " " + strTemp[0] + " (" + entry.getValue() + " titles)");
             reqQuantity--;
         }
     }

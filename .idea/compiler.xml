@@ -9,5 +9,8 @@
         <module name="prn" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="prn" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
